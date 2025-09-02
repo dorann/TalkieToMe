@@ -20,7 +20,6 @@ struct MovieListHeaderView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 9))
                 .foregroundColor(.white)
         }
-
     }
 }
 
