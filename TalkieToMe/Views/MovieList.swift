@@ -14,7 +14,9 @@ struct MovieList: View {
     var body: some View {
         List(movies) { movie in
             MovieRow(movie: movie)
+                .listRowInsets(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 0))
         }
+        .listStyle(.plain)
     }
 }
 
