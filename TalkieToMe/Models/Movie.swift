@@ -15,7 +15,6 @@ class Movie: Identifiable {
     var title: String
     var rating: String
     var releaseYear: Int
-    // Consider computing xh ym format
     var runTime: Int
     var dateWatched: Date?
     var dateAdded: Date
@@ -24,6 +23,12 @@ class Movie: Identifiable {
         var convertedTitle = title.lowercased().replacingOccurrences(of: " ", with: "")
         convertedTitle.removeAll(where: { !$0.isLetter })
         return Image(convertedTitle)
+    }
+    
+    var formattedRunTime: String {
+        let runTimeHours = runTime / 60
+        let runTimeMinutes = runTime % 60
+        return String("\(runTimeHours)h \(runTimeMinutes)m")
     }
     
     init(id: UUID = UUID(), title: String, rating: String, releaseYear: Int, runTime: Int, dateWatched: Date? = nil) {
