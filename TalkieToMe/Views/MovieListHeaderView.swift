@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct MovieListHeaderView: View {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     var movieCount: Int
+    
+    private var textColor: Color {
+        colorScheme == .dark ? .white : .black
+    }
     
     var body: some View {
         HStack {
             Text("To Watch")
-                .foregroundColor(.black)
+                .foregroundColor(textColor)
+                .bold()
             Text(String(movieCount))
                 .padding(EdgeInsets(top: 2, leading: 7, bottom: 2, trailing: 7))
                 .background(.gray)
