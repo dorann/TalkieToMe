@@ -38,6 +38,21 @@ extension Movie {
               rating: "R",
               releaseYear: 2023,
               runTime: 87
+             ),
+        Movie(title: "Boys from County Hell",
+              rating: "NR",
+              releaseYear: 2020,
+              runTime: 88
+             ),
+        Movie(title: "Monster Island",
+              rating: "NR",
+              releaseYear: 2024,
+              runTime: 83
+             ),
+        Movie(title: "Corporate Animals",
+              rating: "R",
+              releaseYear: 2019,
+              runTime: 86
              )
     ]
 }
