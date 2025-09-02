@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct MovieRow: View {
+    let movie: Movie
+
     var body: some View {
         HStack(alignment: .top) {
-            Image("theconference")
+            movie.image
                 .resizable()
                 .frame(width: 75, height: 100)
                 .clipShape(RoundedRectangle(cornerRadius: 4))
             VStack(alignment: .leading) {
                 HStack {
-                    Text("The Conference")
+                    Text(movie.title)
                         .font(.headline)
                     Spacer()
-                    Text("Sep 1")
+                    Text(String(movie.releaseYear))
                         .font(.subheadline)
                 }
-                Text("2025")
+                Text(String(movie.runTime))
                     .font(.subheadline)
             }
             Spacer()
@@ -32,5 +34,6 @@ struct MovieRow: View {
 }
 
 #Preview {
-    MovieRow()
+    let movie: Movie = Movie.sampleData[0]
+    MovieRow(movie: movie)
 }
