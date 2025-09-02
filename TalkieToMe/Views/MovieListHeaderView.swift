@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct MovieListHeaderView: View {
-    @Environment(\.colorScheme) var colorScheme: ColorScheme
     var movieCount: Int
+    
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     
     private var textColor: Color {
         colorScheme == .dark ? .white : .black
