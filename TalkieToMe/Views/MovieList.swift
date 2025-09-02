@@ -11,20 +11,41 @@ import SwiftData
 struct MovieList: View {
     let movies: [Movie]
     
+    @State private var searchText: String = ""
+    
     private var movieCount: Int {
         movies.count
     }
 
     var body: some View {
-        List {
-            Section(header: MovieListHeaderView(movieCount: movies.count)) {
-                ForEach(movies) { movie in
-                    MovieRow(movie: movie)
-                        .listRowInsets(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 0))
+        NavigationView {
+            List {
+                Section(header: MovieListHeaderView(movieCount: movies.count)) {
+                    ForEach(movies) { movie in
+                        MovieRow(movie: movie)
+                            .listRowInsets(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 0))
+                    }
+                }
+            }
+            .listStyle(.grouped)
+            .searchable(text: $searchText)
+            .navigationTitle("To Watch")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                    } label: {
+                        Text("Edit")
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                    } label: {
+                        Image(systemName: "plus")
+                    }
                 }
             }
         }
-        .listStyle(.grouped)
     }
 }
 

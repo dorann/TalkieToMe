@@ -9,15 +9,9 @@ import SwiftUI
 
 struct MovieHome: View {
     let movies: [Movie]
-
+    
     var body: some View {
-        VStack {
-            Text("To Watch")
-                .font(.title3)
-                .bold()
-            MovieList(movies: movies)
-        }
-
+        MovieList(movies: movies)
     }
 }
 
