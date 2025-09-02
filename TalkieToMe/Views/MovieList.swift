@@ -23,9 +23,8 @@ struct MovieList: View {
                         .listRowInsets(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 0))
                 }
             }
-            .font(.headline)
         }
-        .listStyle(.plain)
+        .listStyle(.grouped)
     }
 }
 
