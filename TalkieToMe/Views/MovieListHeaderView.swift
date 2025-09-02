@@ -26,6 +26,14 @@ struct MovieListHeaderView: View {
                 .background(.gray)
                 .clipShape(RoundedRectangle(cornerRadius: 9))
                 .foregroundColor(.white)
+            Spacer()
+            Button {
+                
+            } label: {
+                Text("Sort")
+                Image(systemName: "arrow.up.arrow.down")
+            }
+            .font(.caption)
         }
     }
 }
