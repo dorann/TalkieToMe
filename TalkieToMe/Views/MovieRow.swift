@@ -33,7 +33,7 @@ struct MovieRow: View {
             }
             Spacer()
         }
-        .padding()
+        .alignmentGuide(.listRowSeparatorLeading) { $0[.leading] }
     }
 }
 
