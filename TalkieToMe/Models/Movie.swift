@@ -15,6 +15,7 @@ class Movie: Identifiable {
     var title: String
     var rating: String
     var releaseYear: Int
+    // Consider computing xh ym format
     var runTime: Int
     var dateWatched: Date?
     var dateAdded: Date
