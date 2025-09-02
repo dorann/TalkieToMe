@@ -21,7 +21,8 @@ class Movie: Identifiable {
     var dateAdded: Date
     
     var image: Image {
-        let convertedTitle = title.lowercased().replacingOccurrences(of: " ", with: "")
+        var convertedTitle = title.lowercased().replacingOccurrences(of: " ", with: "")
+        convertedTitle.removeAll(where: { !$0.isLetter })
         return Image(convertedTitle)
     }
     
