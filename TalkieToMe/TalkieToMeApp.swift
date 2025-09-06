@@ -12,7 +12,7 @@ import SwiftData
 struct TalkieToMeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MovieHome()
         }
         .modelContainer(for: Movie.self)
     }
