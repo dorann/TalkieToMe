@@ -7,15 +7,12 @@
 
 import SwiftUI
 
-struct MovieHome: View {
-    let movies: [Movie]
-    
+struct MovieHome: View {    
     var body: some View {
-        MovieList(movies: movies)
+        MovieList()
     }
 }
 
-#Preview {
-    let movies = Movie.sampleData
-    MovieHome(movies: movies)
+#Preview(traits: .movieSampleData) {
+    MovieHome()
 }

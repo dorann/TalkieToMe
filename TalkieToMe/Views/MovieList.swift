@@ -9,8 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct MovieList: View {
-    let movies: [Movie]
-    
+    @Query(sort: \Movie.title) private var movies: [Movie]
     @State private var searchText: String = ""
     @State private var createNewMovie = false
     
@@ -54,7 +53,6 @@ struct MovieList: View {
     }
 }
 
-#Preview {
-    let movies = Movie.sampleData
-    MovieList(movies: movies)
+#Preview(traits: .movieSampleData) {
+    MovieList()
 }
