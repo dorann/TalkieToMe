@@ -27,7 +27,7 @@ struct MovieRow: View {
                 HStack {
                     Text(movie.rating)
                     Text("•")
-                    Text(movie.formattedRunTime)
+                    Text(movie.formattedRuntime)
                 }
                 .font(.subheadline)
             }

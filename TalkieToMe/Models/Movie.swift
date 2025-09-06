@@ -15,7 +15,7 @@ class Movie: Identifiable {
     var title: String
     var rating: String
     var releaseYear: Int
-    var runTime: Int
+    var runtime: Int
     var dateWatched: Date?
     var dateAdded: Date
     
@@ -25,18 +25,18 @@ class Movie: Identifiable {
         return Image(convertedTitle)
     }
     
-    var formattedRunTime: String {
-        let runTimeHours = runTime / 60
-        let runTimeMinutes = runTime % 60
-        return String("\(runTimeHours)h \(runTimeMinutes)m")
+    var formattedRuntime: String {
+        let runtimeHours = runtime / 60
+        let runtimeMinutes = runtime % 60
+        return String("\(runtimeHours)h \(runtimeMinutes)m")
     }
     
-    init(id: UUID = UUID(), title: String, rating: String, releaseYear: Int, runTime: Int, dateWatched: Date? = nil) {
+    init(id: UUID = UUID(), title: String, rating: String, releaseYear: Int, runtime: Int, dateWatched: Date? = nil) {
         self.id = id
         self.title = title
         self.rating = rating
         self.releaseYear = releaseYear
-        self.runTime = runTime
+        self.runtime = runtime
         self.dateAdded = Date()
         self.dateWatched = dateWatched
     }
