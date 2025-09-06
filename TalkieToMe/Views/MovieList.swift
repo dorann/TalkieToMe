@@ -41,7 +41,7 @@ struct MovieList: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        
+                        createNewMovie = true
                     } label: {
                         Image(systemName: "plus")
                     }
