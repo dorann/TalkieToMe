@@ -14,5 +14,6 @@ struct TalkieToMeApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: Movie.self)
     }
 }
