@@ -12,13 +12,14 @@ struct MovieList: View {
     let movies: [Movie]
     
     @State private var searchText: String = ""
+    @State private var createNewMovie = false
     
     private var movieCount: Int {
         movies.count
     }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 Section(header: MovieListHeaderView(movieCount: movies.count)) {
                     ForEach(movies) { movie in
@@ -40,10 +41,14 @@ struct MovieList: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
+                        
                     } label: {
                         Image(systemName: "plus")
                     }
                 }
+            }
+            .sheet(isPresented: $createNewMovie) {
+                NewMovieView()
             }
         }
     }
